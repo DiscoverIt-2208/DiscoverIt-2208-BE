@@ -60,3 +60,4 @@ build-iPhoneSimulator/
 /coverage
 # Ignore application configuration
 /config/application.yml
+/lib/tasks/kill_postgres_connections.rake
