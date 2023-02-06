@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates_format_of :email, with: URI::MailTo::EMAIL_REGEXP
   validates_presence_of :password
 
+  has_many :favorites, dependent: :destroy
+
   private
 
   def standardize_email

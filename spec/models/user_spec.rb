@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
 
   describe 'instance methods - ' do
     # Skipping until everything is more set up just in case
-    xit 'standardizes email to save as lowercase' do 
+    it 'standardizes email to save as lowercase' do 
       user = User.new(name: "Bob", email: "BoBsCaPiTaL_LeTTeRS@gMAIl.coM", password: "password")
       expect(user.email).to eq('bobscapital_letters@gmail.com')
     end
