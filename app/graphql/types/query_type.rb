@@ -20,16 +20,12 @@ module Types
     description: "Return a list of artists"
 
     def users
-      # binding.pry
       User.all
     end
 
-    field :user, 
-    [Types::UserType],
-    null: false, 
-    description: "Return a single user based on id"
-
-    argument :id, ID, required: true
+    field :user, Types::UserType, null: false do
+      argument :id, ID, required: true
+    end
 
     def user(id:)
       User.find(id)
