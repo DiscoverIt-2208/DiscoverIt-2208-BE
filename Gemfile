@@ -31,6 +31,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'jsonapi-serializer'
 gem 'graphql'
+gem "webpacker", "~> 4.x"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
