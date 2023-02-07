@@ -1,6 +1,6 @@
 <h1 align="center"> :compass: DiscoverIt :compass: </h1>
 
-
+Still need DiscoverIt logo to live here in place of the title above. 
 
 <br>
 <br>
@@ -10,64 +10,22 @@ here will live the general description of our application.
 
 :earth_americas: [Homepage](#homepage)
 <br>
+:earth_americas: [Endpoints](#endpoints)
+<br>
 :earth_americas: [Learning Goals](#learning-goals)
-<br>
-:earth_americas: [Project Overview](#project-overview)
-<br>
-:earth_americas: [Planning](#planning)
-<br>
-:earth_americas:[Tech Stack](#tech-stack)
-<br>
-:earth_americas: [Deployment](#deployment)
 <br>
 :earth_americas: [Contributors](#contributors)
 <br>
 ### Homepage 
 [Take Me Home!](https://github.com/DiscoverIt-2208)
+
+### Endpoints 
+
+Here will list out the endpoints we exposed.
+
 ### Learning Goals
-Back end
-  -
-  - Consume two or more external APIs 
-  - Create a project with a separate frontend and backend
-  - Code follows DRY and SRP design
-  
-### Project Overview
-
-[Backend repo](https://github.com/BruCycle/brucycle_be)
-<br>
-[Frontend repo](https://github.com/BruCycle/brucycle_fe)
-
-### Setup/Installation Guide
-
-<br>
-
-### Planning
-
-### Tech Stack
-![rubyonrails](https://img.shields.io/badge/rubyonrails-6.0.6-000000?style=for-the-badge&logo=rubyonrails&logoColor=red)
-<br>
-![ruby](https://img.shields.io/badge/ruby-2.7.4-000000?style=for-the-badge&logo=ruby&logoColor=red)
-<br>
-![json](https://img.shields.io/badge/json-000000?style=for-the-badge&logo=json&logoColor=white)
-<br>
-![postgresql](https://img.shields.io/badge/postgresql-000000?style=for-the-badge&logo=postgresql&logoColor=light-blue)
-<br> 
-![Bootstrap](https://img.shields.io/badge/bootstrap-000000?style=for-the-badge&logo=bootstrap&logoColor=white)
-<br> 
-![Heroku](https://img.shields.io/badge/heroku-000000.svg?style=for-the-badge&logo=heroku&logoColor=%23430098)
-<br>
-![HTML5](https://img.shields.io/badge/html5-000000.svg?style=for-the-badge&logo=html5&logoColor=23E34F26)
-<br>
-![Markdown](https://img.shields.io/badge/markdown-000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
-<br>
-![Miro](https://img.shields.io/badge/Miro-000000?style=for-the-badge&logo=Miro&logoColor=yellow)
-<br>
- 
-
-### Deployment
-Check out our live app here: 
-
-
+- Above 80% test coverage
+- Create a Backend API using [GraphQL](https://www.apollographql.com/blog/community/backend/using-graphql-with-ruby-on-rails/)
 ### Contributors
 
 <table>
@@ -89,7 +47,7 @@ Check out our live app here:
     <td><img src="https://avatars.githubusercontent.com/u/106535343?v=4"></td>
     <td><img src="https://avatars.githubusercontent.com/u/98673086?v=4"></td>
     <td><img src="https://avatars.githubusercontent.com/u/110377741?v=4"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/105073232?s=120&v=4"></td>
+    <td><img src="https://avatars.githubusercontent.com/u/105073232?v=4"></td>
     <td><img src="https://avatars.githubusercontent.com/u/5234142?v=4"></td>
     <td><img src="https://avatars.githubusercontent.com/u/22563791?v=4"></td>
     
@@ -100,7 +58,7 @@ Check out our live app here:
        <a href="https://github.com/jmyacobn" rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
       </a><br>
-        <a href="https://www.linkedin.com/in/ashuhleyt/" rel="nofollow noreferrer">
+        <a href="https://www.linkedin.com/in/jennifer-yacoubian/" rel="nofollow noreferrer">
     <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
       </a>
     </td>
@@ -108,7 +66,7 @@ Check out our live app here:
        <a href="https://github.com/Astrid-Hecht" rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
       </a><br>
-        <a href="https://www.linkedin.com/in/ashuhleyt/" rel="nofollow noreferrer">
+        <a href="https://www.linkedin.com/in/astrid-hecht/" rel="nofollow noreferrer">
     <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
       </a>
     </td>
@@ -116,7 +74,7 @@ Check out our live app here:
       <a href="https://github.com/daniabee"  rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
         </a><br>
-      <a href="https://www.linkedin.com/in/ashuhleyt/" rel="nofollow noreferrer">
+      <a href="https://www.linkedin.com/in/dani-bagley-798463116/" rel="nofollow noreferrer">
     <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
         </a>
     </td>
@@ -124,7 +82,7 @@ Check out our live app here:
       <a href="https://github.com/grainymac" rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
         </a><br>
-      <a href="https://www.linkedin.com/in/kristen-nestler/ rel="nofollow noreferrer">
+      <a href="https://www.linkedin.com/in/ianmac87/" rel="nofollow noreferrer">
     <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
         </a>
     </td>
@@ -132,7 +90,7 @@ Check out our live app here:
       <a href="https://github.com/lcole37"  rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
         </a><br>
-      <a href="https://www.linkedin.com/in/james-ed-wh/" rel="nofollow noreferrer">
+      <a href="https://www.linkedin.com/in/lucas-colwell-b3a753179/" rel="nofollow noreferrer">
     <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
         </a>
     </td>
@@ -140,7 +98,7 @@ Check out our live app here:
       <a href="https://github.com/msakr21" rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
         </a><br>
-      <a href="https://www.linkedin.com/in/naomiyocum/" rel="nofollow noreferrer">
+      <a href="https://www.linkedin.com/in/mostafa-sakr-4bb722250/" rel="nofollow noreferrer">
     <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
         </a>
     </td>
@@ -156,7 +114,7 @@ Check out our live app here:
        <a href="https://github.com/bontgoy" rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
       </a><br>
-        <a href="https://github.com/Astrid-Hecht" rel="nofollow noreferrer">
+        <a href="https://www.linkedin.com/in/tyler-keating" rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
       </a>
     </td>
@@ -164,10 +122,9 @@ Check out our live app here:
        <a href="https://github.com/letakeane" rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/tskMh.png" alt="github"> Github
       </a><br>
-        <a href="https://github.com/Astrid-Hecht" rel="nofollow noreferrer">
+        <a href="https://www.linkedin.com/in/letakeane" rel="nofollow noreferrer">
           <img src="https://i.stack.imgur.com/gVE0j.png" alt="linkedin"> LinkedIn
       </a>
     </td>
   </tr>
 </table>
-
