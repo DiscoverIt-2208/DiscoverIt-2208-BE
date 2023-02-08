@@ -7,7 +7,6 @@ RSpec.describe PlacesFacade do #, :vcr do
 
     city_info = GeocodingFacade.city_info(city, country)
     hotels = PlacesFacade.hotels(city_info)
-    # require "pry"; binding.pry
 
     expect(hotels).to be_an Array
     hotels.each do |h|

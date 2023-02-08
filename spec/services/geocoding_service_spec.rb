@@ -5,7 +5,6 @@ RSpec.describe GeocodingService do #, :vcr do
       city_name = "Paris"
       country = "France"
         response = GeocodingService.city_info(city_name, country)
-        # require "pry"; binding.pry
         expect(response).to be_a Array
         expect(response.first).to be_a Hash
         expect(response.first).to have_key :name
