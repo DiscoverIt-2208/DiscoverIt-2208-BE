@@ -243,6 +243,9 @@ GEM
     thor (1.2.1)
     thread_safe (0.3.6)
     timeout (0.3.1)
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (1.2.11)
       thread_safe (~> 0.1)
     unicode-display_width (2.4.2)
@@ -289,6 +292,7 @@ DEPENDENCIES
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
+  turbolinks
   tzinfo-data
   webmock
   webpacker (~> 4.x)

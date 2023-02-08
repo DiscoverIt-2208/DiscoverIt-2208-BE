@@ -51,6 +51,7 @@ group :development do
   gem 'pry-rails'
   gem 'rubocop-rails'
   gem 'graphiql-rails'
+  gem 'turbolinks'
 end
 
 
