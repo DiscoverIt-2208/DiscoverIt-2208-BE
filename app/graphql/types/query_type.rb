@@ -30,5 +30,7 @@ module Types
     def user(id:)
       User.find(id)
     end
+
+    field :fetch_places, resolver: Queries::FetchPlaces
   end
 end
