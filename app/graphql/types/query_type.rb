@@ -14,15 +14,6 @@ module Types
       "Hello World!"
     end
 
-    field :users, 
-    [Types::UserType],
-    null: false, 
-    description: "Return a list of artists"
-
-    def users
-      User.all
-    end
-
     field :user, Types::UserType, null: false do
       argument :id, ID, required: true
     end
@@ -30,5 +21,7 @@ module Types
     def user(id:)
       User.find(id)
     end
+
+    # field :fetch_places, resolver: Queries::FetchPlaces
   end
 end

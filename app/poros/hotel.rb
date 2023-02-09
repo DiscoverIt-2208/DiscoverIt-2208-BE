@@ -4,8 +4,8 @@ class Hotel
               :place_id
 
   def initialize(data)
-     @name = data[:properties][:name]
-     @address = data[:properties][:formatted]
-     @place_id = data[:properties][:place_id]
+    @name = data[:properties][:name]
+    @address = data[:properties][:formatted]
+    @place_id = data[:properties][:place_id]
   end
 end
