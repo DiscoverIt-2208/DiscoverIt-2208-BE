@@ -1,9 +1,7 @@
-<h1 align="center"> :compass: DiscoverIt :compass: </h1>
+<div align="center"> 
 
-Still need DiscoverIt logo to live here in place of the title above. 
-
-<br>
-<br>
+![Asset 4](https://user-images.githubusercontent.com/105073232/217386688-758d8d96-71ec-46cf-84ea-9de425b0dff0.png)  
+</div>
 
 here will live the general description of our application. 
 
