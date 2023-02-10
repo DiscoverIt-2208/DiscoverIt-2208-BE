@@ -5,6 +5,8 @@ describe PlacesService do #, :vcr do
     city = "Paris"
     country = "France"
 
+    # test_1 = PlacesService.test
+
     capital_info = GeocodingFacade.city_info(city,country)
     hotels = PlacesService.get_hotels(capital_info)
     
