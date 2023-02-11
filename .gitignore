@@ -62,3 +62,4 @@ build-iPhoneSimulator/
 /config/application.yml
 /lib/tasks/kill_postgres_connections.rake
 log/*
+/node_modules
