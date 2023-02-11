@@ -1,16 +1,25 @@
 require 'rails_helper'
 
-RSpec.describe PlacesFacade do #, :vcr do
+RSpec.describe PlacesFacade do # , :vcr do
   it 'returns places from capital of searched country' do
-    city = "Paris"
-    country = "France"
+    city_info = { name: 'Paris', latitude: 48.8588897, longitude: 2.3200410217200766, country: 'FR',
+                  state: 'Ile-de-France' }
 
-    city_info = GeocodingFacade.city_info(city, country)
-    hotels = PlacesFacade.hotels(city_info)
+    places = PlacesFacade.places(city_info)
 
-    expect(hotels).to be_an Array
-    hotels.each do |h|
-      expect(h).to be_a Hotel
-    end
+    expect(places).to be_an Array
+
+    hit = places[0]
+
+    expect(hit).to be_a(Hash)
+    expect(hit.keys).to eq(%i[name lon lat address_line1 address_line2 categories place_id])
+    expect(hit[:name]).to be_a(String)
+    expect(hit[:address_line1]).to be_a(String)
+    expect(hit[:address_line2]).to be_a(String)
+    expect(hit[:categories]).to be_a(Array)
+    expect(hit[:categories][0]).to be_a(String)
+    expect(hit[:place_id]).to be_a(String)
+    expect(hit[:lat]).to be_a(Float)
+    expect(hit[:lon]).to be_a(Float)
   end
 end
