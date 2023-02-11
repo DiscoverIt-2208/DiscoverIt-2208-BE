@@ -1,4 +1,3 @@
-
 module Queries
   class FetchHotels < Queries::BaseQuery
     type [Types::HotelType], null: true
