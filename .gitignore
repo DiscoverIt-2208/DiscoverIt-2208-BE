@@ -61,6 +61,4 @@ build-iPhoneSimulator/
 # Ignore application configuration
 /config/application.yml
 /lib/tasks/kill_postgres_connections.rake
-/log
-log
-log/development.log
+log/*
