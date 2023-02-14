@@ -26,4 +26,21 @@ describe GeoapifyService do # , :vcr do
     expect(prop[:categories][0]).to be_a(String)
     expect(prop[:place_id]).to be_a(String)
   end
+
+  it 'returns details of a given place' do 
+    city_info = { name: 'Denver', latitude: 39.72597346440564, longitude: -104.97816344416759, country: 'US',
+                  state: 'Colorado' }
+
+    places = GeoapifyService.get_city_places(city_info)[:features]
+    hit = places[0]
+    prop = hit[:properties]
+    id = prop[:place_id]
+    details = GeoapifyService.get_place_details(id)
+    
+    expect(details.keys).to eq(%i[type features])
+    expect(details[:features]).to be_an(Array)
+    expect(details[:features][0].keys).to eq(%i[type properties geometry])
+    expect(details[:features][0][:properties]).to have_key(:name)
+    expect(details[:features][0][:properties][:name]).to eq("Tibet Imports")
+  end
 end
