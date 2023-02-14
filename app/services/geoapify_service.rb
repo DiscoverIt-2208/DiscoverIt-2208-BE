@@ -1,7 +1,7 @@
 class GeoapifyService
   def self.get_places(city_info, categories = nil, offset = 0, radius_mult = 1)
     categories ||= default_categories
-    
+
     response = conn.get("/v2/places") do |f|
       f.params['categories'] = categories.join(', ')
       f.params['bias'] = "proximity:#{city_info[:longitude]},#{city_info[:latitude]}"
