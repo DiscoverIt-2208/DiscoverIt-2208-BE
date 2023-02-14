@@ -14,6 +14,7 @@ module Mutations
     field :errors, [String], null: false
 
     def resolve(args)
+      return  { error: "#{args[:place_name]} is already in favorites!"} if Favorite.find_by(place_name: args[:place_name], user_id: args[:user_id], ninja_id: args[:ninja_id])
       Favorite.create(
         user_id: args[:user_id],
         ninja_id: args[:ninja_id],
@@ -26,7 +27,6 @@ module Mutations
 
         {
         success: "#{args[:place_name]} has been added to favorites!",
-        errors: []
         }
     end
   end
