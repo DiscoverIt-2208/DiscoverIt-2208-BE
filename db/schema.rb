@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2023_02_14_031431) do
     t.datetime "updated_at", null: false
     t.string "city"
     t.string "country"
-    t.string "state"
+    t.string "state", default: ""
     t.string "address"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end

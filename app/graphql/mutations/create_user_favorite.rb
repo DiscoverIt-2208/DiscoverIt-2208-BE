@@ -20,9 +20,10 @@ module Mutations
             ninja_id: args[:ninja_id],
             place_name: args[:place_name],
             thumbnail_url: args[:thumbnail_url],
-            # city: args[:city],
-            # # state: args[:state],
-            # country: args[:country]
+            city: args[:city],
+            state: args[:state],
+            country: args[:country],
+            address: args[:address]
             )
             { 
               error: "#{args[:place_name]} is already in favorites!"
@@ -33,9 +34,10 @@ module Mutations
             ninja_id: args[:ninja_id],
             place_name: args[:place_name],
             thumbnail_url: args[:thumbnail_url],
-            # city: args[:city],
-            # # state: args[:state],
-            # country: args[:country]
+            city: args[:city],
+            state: args[:state],
+            country: args[:country],
+            address: args[:address]
             )
 
             {
