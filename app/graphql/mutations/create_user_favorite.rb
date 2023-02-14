@@ -5,10 +5,11 @@ module Mutations
     argument :user_id, Integer, required: true
     argument :ninja_id, String, required: true
     argument :place_name, String, required: true
-    argument :thumbnail_url, String, required: false
-    # argument :city, String, required: true
-    # argument :state, String, required: false
-    # argument :country, String, required: true
+    argument :thumbnail_url, String, required: true
+    argument :city, String, required: true
+    argument :state, String, required: false
+    argument :country, String, required: true
+    argument :address, String, required: true
 
     field :success, String, null: true
     field :error, String, null: true
@@ -24,7 +25,7 @@ module Mutations
             # country: args[:country]
             )
             { 
-                error: "#{args[:place_name]} is already in favorites!"
+              error: "#{args[:place_name]} is already in favorites!"
             } 
       else
         Favorite.create(
@@ -38,7 +39,7 @@ module Mutations
             )
 
             {
-            success: "#{args[:place_name]} has been added to favorites!"
+              success: "#{args[:place_name]} has been added to favorites!"
             }
       end
     end
