@@ -33,6 +33,7 @@ gem 'jsonapi-serializer'
 gem 'graphql'
 gem "webpacker", "~> 4.x"
 gem 'rack-cors'
+gem "net-http"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -13,6 +13,12 @@ class GeoapifyService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def self.get_place_details(id)
+    response = conn.get("/v2/place-details?id=#{id}") 
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
   # PRIVATE METHODS
   #===============================================================
 
