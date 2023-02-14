@@ -31,7 +31,7 @@ describe GeoapifyService do # , :vcr do
     city_info = { name: 'Denver', latitude: 39.72597346440564, longitude: -104.97816344416759, country: 'US',
                   state: 'Colorado' }
 
-    places = GeoapifyService.get_places(city_info)[:features]
+    places = GeoapifyService.get_city_places(city_info)[:features]
     hit = places[0]
     prop = hit[:properties]
     id = prop[:place_id]
