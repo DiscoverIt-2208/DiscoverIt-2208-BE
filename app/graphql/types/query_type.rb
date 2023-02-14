@@ -11,6 +11,6 @@ module Types
       User.find(id)
     end
 
-    field :hotels, resolver: Queries::FetchHotels
+    field :places, resolver: Queries::FetchPlaces
   end
 end

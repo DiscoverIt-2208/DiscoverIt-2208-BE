@@ -1,4 +1,4 @@
-class Hotel
+class Place
   attr_reader :name,
               :address,
               :place_id
