@@ -51,29 +51,28 @@ RSpec.describe PlacesFacade do # , :vcr do
     end
   end
 
-  context 'expanding radius' do
-    it 'expands the search radius to find 20 results' do
-      mt_tobin = { longitude: '-117.522539', latitude: '40.374096' }
-      response = Faraday.get("https://api.geoapify.com/v2/places") do |f|
-        f.params['categories'] = 'tourism.sights'
-        f.params['bias'] = "proximity:#{mt_tobin[:longitude]},#{mt_tobin[:latitude]}"
-        f.params['filter'] = "circle:#{mt_tobin[:longitude]},#{mt_tobin[:latitude]},5000"
-        f.params['limit'] = '20'
-        f.params['apiKey'] = ENV['places_api_key']
-      end
+  # Old test for auto expanding radius method
+  # context 'expanding radius' do
+  #   it 'expands the search radius to find 20 results' do
+  #     mt_tobin = { longitude: '-117.522539', latitude: '40.374096' }
+  #     response = Faraday.get("https://api.geoapify.com/v2/places") do |f|
+  #       f.params['categories'] = 'tourism.sights'
+  #       f.params['bias'] = "proximity:#{mt_tobin[:longitude]},#{mt_tobin[:latitude]}"
+  #       f.params['filter'] = "circle:#{mt_tobin[:longitude]},#{mt_tobin[:latitude]},5000"
+  #       f.params['limit'] = '20'
+  #       f.params['apiKey'] = ENV['places_api_key']
+  #     end
 
-      target_fields = %i[name address_line1 address_line2 categories place_id lon lat]
+  #     target_fields = %i[name address_line1 address_line2 categories place_id lon lat]
 
-      parsed = JSON.parse(response.body, symbolize_names: true)[:features]
-                   .map { |hit| hit[:properties].select { |key, _value| target_fields.include?(key) } }
+  #     parsed = JSON.parse(response.body, symbolize_names: true)[:features]
+  #                  .map { |hit| hit[:properties].select { |key, _value| target_fields.include?(key) } }
 
-      expect(parsed.count).to be < 20
+  #     expect(parsed.count).to be < 20
 
-      full_search = PlacesFacade.places(mt_tobin, ['tourism.sights'])
+  #     full_search = PlacesFacade.places(mt_tobin, ['tourism.sights'])
 
-      expect(full_search.count).to be 20
-    end
-  end
-
-
+  #     expect(full_search.count).to be 20
+  #   end
+  # end
 end

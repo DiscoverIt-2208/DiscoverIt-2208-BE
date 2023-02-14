@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe GeoapifyService do # , :vcr do
-  it '.get_places' do
+  it '.get_city_places' do
     city_info = { name: 'Paris', latitude: 48.8588897, longitude: 2.3200410217200766, country: 'FR',
                   state: 'Ile-de-France' }
 
-    places = GeoapifyService.get_places(city_info)[:features]
+    places = GeoapifyService.get_city_places(city_info)[:features]
 
     expect(places).to be_an Array
     expect(places.count).to eq(20)
