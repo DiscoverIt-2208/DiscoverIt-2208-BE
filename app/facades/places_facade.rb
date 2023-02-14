@@ -5,8 +5,8 @@ class PlacesFacade
     geoapify_fields: %i[name address_line1 address_line2 categories place_id lon lat]
   }.freeze
 
-  def self.places(city_info, categories = nil, page = 0)
-    geoapify_get_places(city_info, categories, page)
+  def self.places(city_info, categories = nil, page = 0, search_radius = 2500)
+    geoapify_get_places(city_info, categories, page, search_radius)
   end
 
   # PRIVATE METHODS
@@ -22,7 +22,7 @@ class PlacesFacade
   #  -------------------------------------------------------------------------
 
   # Manager method. The symbol :geoapify_fields is stored in TARGET_FIELDS on line 4
-  def self.geoapify_get_places(city_info, categories, page, search_radius = 2500)
+  def self.geoapify_get_places(city_info, categories, page, search_radius)
     raw_hits = geoapify_populate_results(city_info, categories, page, search_radius)
     properties = geoapify_flattener(raw_hits)
     target_field_filter(properties, :geoapify_fields)
@@ -30,7 +30,9 @@ class PlacesFacade
 
   # Populates results. If less than 20, FE will need to query with a bigger radius if thay want more results
   def self.geoapify_populate_results(city_info, categories, page, search_radius)
-    [].concat(GeoapifyService.get_city_places(city_info, categories, (page * 20), search_radius)[:features])
+    raw_hits = []
+    geoapify_response = GeoapifyService.get_city_places(city_info, categories, (page * 20), search_radius)
+    raw_hits.concat(geoapify_response[:features]) if geoapify_response[:features].presence
   end
 
   # Flattens geoapify responses specifically
