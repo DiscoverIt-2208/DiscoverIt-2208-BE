@@ -10,7 +10,7 @@ RSpec.describe GoogleService do # , :vcr do
     expect(response[:candidates]).to be_an Array
     hit = response[:candidates].first
     expect(hit[:name]).to eq("Meow Wolf Denver | Convergence Station")
-    exepect(hit[:photos]).to be_an Array
+    expect(hit[:photos]).to be_an Array
     expect(hit[:photos].first[:photo_reference]).to be_a String
   end
 end
