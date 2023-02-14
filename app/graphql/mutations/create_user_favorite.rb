@@ -10,24 +10,37 @@ module Mutations
     # argument :state, String, required: false
     # argument :country, String, required: true
 
-    field :success, String, null: false
-    field :errors, [String], null: false
+    field :success, String, null: true
+    field :error, String, null: true
+
 
     def resolve(args)
-      return  { error: "#{args[:place_name]} is already in favorites!"} if Favorite.find_by(place_name: args[:place_name], user_id: args[:user_id], ninja_id: args[:ninja_id])
-      Favorite.create(
-        user_id: args[:user_id],
-        ninja_id: args[:ninja_id],
-        place_name: args[:place_name],
-        thumbnail_url: args[:thumbnail_url],
-        # city: args[:city],
-        # # state: args[:state],
-        # country: args[:country]
-        )
+      if Favorite.find_by(user_id: args[:user_id],
+            ninja_id: args[:ninja_id],
+            place_name: args[:place_name],
+            thumbnail_url: args[:thumbnail_url],
+            # city: args[:city],
+            # # state: args[:state],
+            # country: args[:country]
+            )
+            { 
+                error: "#{args[:place_name]} is already in favorites!"
+            } 
+      else
+        Favorite.create(
+            user_id: args[:user_id],
+            ninja_id: args[:ninja_id],
+            place_name: args[:place_name],
+            thumbnail_url: args[:thumbnail_url],
+            # city: args[:city],
+            # # state: args[:state],
+            # country: args[:country]
+            )
 
-        {
-        success: "#{args[:place_name]} has been added to favorites!",
-        }
+            {
+            success: "#{args[:place_name]} has been added to favorites!"
+            }
+      end
     end
   end
 end
