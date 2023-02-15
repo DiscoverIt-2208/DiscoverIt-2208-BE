@@ -42,6 +42,11 @@ class PlacesFacade
     end
   end
 
+  def self.get_detailed_information(id)
+    json = GeoapifyService.get_place_details(id)
+    json[:features][0][:properties]
+  end
+
   # END Geoapify methods
   #  -------------------------------------------------------------------------
 
