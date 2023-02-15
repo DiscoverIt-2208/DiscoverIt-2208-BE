@@ -20,7 +20,7 @@ module Queries
           'place_id' => place[:place_id],
           'city' => city_info[:city], 'country' => city_info[:country],
           'lat' => place[:lat], 'lon' => place[:lon],
-          'photo_reference' => place[:image_data][:photo_reference]
+          'image_data' => place[:image_data].to_s
         }
       end
     end
