@@ -52,7 +52,7 @@ here will live the general description of our application.
         country: String
         lat: Float
         lon: Float
-        imageData: JSON
+        imageData: {name: String, photo_reference: String} or {error_message: String}
       }
       ```
 
