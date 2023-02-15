@@ -15,13 +15,16 @@ RSpec.describe PlacesFacade do # , :vcr do
     hit = places[0]
 
     expect(hit).to be_a(Hash)
-    expect(hit.keys).to eq(%i[name lon lat address_line1 address_line2 categories place_id])
+    expect(hit.keys).to eq(%i[name lon lat formatted categories place_id image_data])
     expect(hit[:name]).to be_a(String)
-    expect(hit[:address_line1]).to be_a(String)
-    expect(hit[:address_line2]).to be_a(String)
+    expect(hit[:formatted]).to be_a(String)
     expect(hit[:categories]).to be_a(Array)
     expect(hit[:categories][0]).to be_a(String)
     expect(hit[:place_id]).to be_a(String)
+    expect(hit[:image_data]).to be_a Hash
+    expect(hit[:image_data].keys).to eq(%i[name photo_reference])
+    expect(hit[:image_data][:name]).to be_a(String)
+    expect(hit[:image_data][:photo_reference]).to be_a(String)
     expect(hit[:lat]).to be_a(Float)
     expect(hit[:lon]).to be_a(Float)
   end
@@ -36,13 +39,13 @@ RSpec.describe PlacesFacade do # , :vcr do
         f.params['apiKey'] = ENV['places_api_key']
       end
 
-      target_fields = %i[name address_line1 address_line2 categories place_id lon lat]
+      target_fields = %i[name formatted categories place_id lon lat]
 
       parsed = JSON.parse(response.body, symbolize_names: true)[:features]
                    .map { |hit| hit[:properties].select { |key, _value| target_fields.include?(key) } }
 
-      page_1 = PlacesFacade.places(city_info, ['tourism.sights'], 0)
-      page_2 = PlacesFacade.places(city_info, ['tourism.sights'], 1)
+      page_1 = PlacesFacade.places(city_info, ['tourism.sights'], 0).map { |hit| hit.reject {|k,_v| k == :image_data}}
+      page_2 = PlacesFacade.places(city_info, ['tourism.sights'], 1).map { |hit| hit.reject {|k,_v| k == :image_data}}
 
       parsed.each
       expect(page_1).to eq(parsed.take(20))
