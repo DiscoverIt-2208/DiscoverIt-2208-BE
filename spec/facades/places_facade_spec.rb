@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PlacesFacade do # , :vcr do
+RSpec.describe PlacesFacade, :vcr do
   let(:city_info) {{ name: 'Paris', latitude: 48.8588897, longitude: 2.3200410217200766, country: 'FR',
     state: 'Ile-de-France' }}
   

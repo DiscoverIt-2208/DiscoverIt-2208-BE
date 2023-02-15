@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ImageFacade do # , :vcr do
+RSpec.describe ImageFacade, :vcr do
   it 'get_place_image_ref' do
     address = 'Convergence Station - Meow Wolf, 1338 1st Street, Denver, CO 80204, United States of America'
     hit = ImageFacade.get_place_image_ref(address)
