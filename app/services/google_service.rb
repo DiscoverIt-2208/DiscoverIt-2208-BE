@@ -5,7 +5,6 @@ class GoogleService
       f.params['inputtype'] = 'textquery'
       f.params['input'] = address
     end
-    # binding.pry
     JSON.parse(response.body, symbolize_names: true)
   end
 
