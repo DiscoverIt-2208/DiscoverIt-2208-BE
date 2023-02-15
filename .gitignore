@@ -71,4 +71,9 @@ yarn-debug.log*
 
 config/application.yml
 
+
+/fixtures/
+fixtures
+fixtures/
+
 .DS_Store
