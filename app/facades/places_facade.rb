@@ -2,7 +2,7 @@ class PlacesFacade
   # Target field arrays for each API. As place APIs are addedin the future,
   # they will have their own hash element to allow target_field_filter to format uniformly
   TARGET_FIELDS = {
-    geoapify_fields: %i[name address_line1 address_line2 categories place_id lon lat]
+    geoapify_fields: %i[name formatted categories place_id lon lat image_data]
   }.freeze
 
   def self.places(city_info, categories = nil, page = 0, search_radius = 2500)
@@ -38,6 +38,7 @@ class PlacesFacade
   # Flattens geoapify responses specifically
   def self.geoapify_flattener(raw_hits)
     raw_hits.map do |raw_hit|
+      raw_hit[:properties][:image_data] = ImageFacade.get_place_image_ref(raw_hit[:properties][:formatted])
       raw_hit[:properties]
     end
   end

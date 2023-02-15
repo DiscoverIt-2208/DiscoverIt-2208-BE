@@ -10,5 +10,6 @@ module Types
     field :country, String
     field :lat, Float
     field :lon, Float
+    field :image_data, String
   end
 end
