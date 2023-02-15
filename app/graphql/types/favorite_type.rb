@@ -4,7 +4,7 @@ module Types
 
     field :id, ID, null: false
     field :user, Types::UserType, null: false
-    field :ninja_id, String, null: false
+    field :place_id, String, null: false
     field :place_name, String, null: false
     field :thumbnail_url, String, null: false
     field :city, String, null: false

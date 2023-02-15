@@ -6,7 +6,7 @@ RSpec.describe Favorite, type: :model do
   end
 
   describe 'validations' do
-    it { should validate_presence_of :ninja_id }
+    it { should validate_presence_of :place_id }
     it { should validate_presence_of :place_name }
     it { should validate_presence_of :thumbnail_url }
   end

@@ -54,6 +54,21 @@ RSpec.describe PlacesFacade, :vcr do
     end
   end
 
+  describe '.get_detailed_information' do 
+    it 'returns details for a specific place based off id' do
+      city_info = { name: 'Olympia', latitude: 47.038360820746234, longitude: -122.93770133659231, country: 'US',
+                  state: 'Washington' }
+
+      places = PlacesFacade.places(city_info, categories = ['sport.fitness'])
+
+      hit = places[0]
+      id = hit[:place_id]
+      details = PlacesFacade.get_detailed_information(id)
+      
+      expect(details).to have_key(:name)
+      expect(details[:name]).to eq("Planet Fitness")
+    end
+  end
   # Old test for auto expanding radius method
   # context 'expanding radius' do
   #   it 'expands the search radius to find 20 results' do
