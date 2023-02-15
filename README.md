@@ -17,9 +17,44 @@ here will live the general description of our application.
 ### Homepage 
 [Take Me Home!](https://github.com/DiscoverIt-2208)
 
-### Endpoints 
-
-Here will list out the endpoints we exposed.
+### Endpoint + GraphQL JSON Contract(Queries, Mutations, etc.)
+`https://discover-it.herokuapp.com/graphql'
+#### Queries
+  * User:
+    ```
+    user(id:) {
+      id: Integer
+      name: String
+      email: String
+      password: String
+      favorites: [
+        FavoriteType
+      ]
+      created_at
+      updated_at
+    }
+    ```
+  * Favorite 
+      ```
+      favorite (id:) {
+    }
+      ```
+  * Fetch Places 
+      ```
+      places (city: String, country: String, categories: [String], page: Integer, radius: Integer) {
+        name: String
+        address: String
+        placeId: String
+        categories: [
+         String
+        ]
+        city: String
+        country: String
+        lat: Float
+        lon: Float
+        imageData: JSON
+      }
+      ```
 
 ### Learning Goals
 - Above 80% test coverage
