@@ -14,12 +14,13 @@ module Queries
 
       places.each_with_object([]) do |place, array|
         array << {
-          'name' => place[:name].presence || place[:address_line1],
-          'address' => place[:name] == place[:address_line1] ? place[:address_line2] : "#{place[:address_line1]} #{place[:address_line2]}",
+          'name' => place[:name].presence || place[:formatted],
+          'address' => place[:formatted],
           'categories' => place[:categories],
           'place_id' => place[:place_id],
           'city' => city_info[:city], 'country' => city_info[:country],
-          'lat' => place[:lat], 'lon' => place[:lon]
+          'lat' => place[:lat], 'lon' => place[:lon],
+          'photo_reference' => place[:image_data][:photo_reference]
         }
       end
     end
