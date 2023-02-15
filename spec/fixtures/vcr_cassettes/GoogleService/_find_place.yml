@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=photo,name&input=meow%20wolf%20denver&inputtype=textquery&key=AIzaSyBb6WkoJnVZTaWNs_RsNcoZqaVWiF7aeCo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 15 Feb 2023 16:07:00 GMT
+      Expires:
+      - Wed, 15 Feb 2023 16:12:00 GMT
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - scaffolding on HTTPServer2
+      Content-Length:
+      - '426'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=476
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "candidates" : [
+              {
+                 "name" : "Meow Wolf Denver | Convergence Station",
+                 "photos" : [
+                    {
+                       "height" : 1600,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/105799325428995878861\"\u003eA Google User\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "AfLeUgN1hIIDoyDgfquRcNHX32X4SU3Dz7PMs5U2y6-ogVmROgI14dNTkRfAmmBUd9jtHuD1X93mo5iP5tUvP2pca14fv3OtXVTopAlE2vxzMn6-28bEhZzVrrgA0mOz3Z3nwksRJOu2LumwtCxvVStKPbckSKh2bO34v39aFcWohI08OsGz",
+                       "width" : 2400
+                    }
+                 ]
+              }
+           ],
+           "status" : "OK"
+        }
+  recorded_at: Wed, 15 Feb 2023 16:07:00 GMT
+recorded_with: VCR 6.1.0

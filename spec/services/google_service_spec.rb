@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe GoogleService do # , :vcr do
+RSpec.describe GoogleService, :vcr do
   it '.find_place' do
     address = 'meow wolf denver'
     response = GoogleService.find_place(address, 'photo,name')

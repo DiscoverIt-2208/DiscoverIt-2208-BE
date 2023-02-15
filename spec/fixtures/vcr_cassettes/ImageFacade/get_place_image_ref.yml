@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=name,photo&input=Convergence%20Station%20-%20Meow%20Wolf,%201338%201st%20Street,%20Denver,%20CO%2080204,%20United%20States%20of%20America&inputtype=textquery&key=AIzaSyBb6WkoJnVZTaWNs_RsNcoZqaVWiF7aeCo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 15 Feb 2023 16:06:07 GMT
+      Expires:
+      - Wed, 15 Feb 2023 16:11:07 GMT
+      Cache-Control:
+      - public, max-age=300
+      Server:
+      - scaffolding on HTTPServer2
+      Content-Length:
+      - '424'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=710
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "candidates" : [
+              {
+                 "name" : "Meow Wolf Denver | Convergence Station",
+                 "photos" : [
+                    {
+                       "height" : 1600,
+                       "html_attributions" : [
+                          "\u003ca href=\"https://maps.google.com/maps/contrib/105799325428995878861\"\u003eA Google User\u003c/a\u003e"
+                       ],
+                       "photo_reference" : "AfLeUgOBIaBDqaLHi-_misnBzYM0sLcWRXk1LzXx9exxzg7rBuwiWlcVA3Ws7UXsj0p0Hc-LL-k0ORsxF5MWfqFOWN-Br81-9mHmtZtlFzZX9_hPyjLtOeHBuepS73PH7qNeDWFJGriZn8vHwwCxJt-5UU0M910pt8PwF0Ms55jad5OVa87P",
+                       "width" : 2400
+                    }
+                 ]
+              }
+           ],
+           "status" : "OK"
+        }
+  recorded_at: Wed, 15 Feb 2023 16:06:07 GMT
+recorded_with: VCR 6.1.0

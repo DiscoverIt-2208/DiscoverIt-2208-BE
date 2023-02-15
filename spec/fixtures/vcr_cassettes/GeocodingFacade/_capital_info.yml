@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.api-ninjas.com/v1/geocoding?city=Paris&country=France
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Key:
+      - SQ9TUs0mgs7M1LkbMbLggw==HGi7lMffXrvIGHsj
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '578'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 15 Feb 2023 17:27:09 GMT
+      X-Amzn-Requestid:
+      - d9dc1c45-008e-4cf0-bc69-389c6935df13
+      Access-Control-Allow-Origin:
+      - "*"
+      Allow:
+      - GET, OPTIONS, POST
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Amz-Apigw-Id:
+      - AZBcyHZ3vHcFh_g=
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS, POST
+      X-Amzn-Trace-Id:
+      - Root=1-63ed15eb-08efaf99300980c94c9014a2;Sampled=0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 a827400055d7bbab6e387896737d4e50.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P1
+      X-Amz-Cf-Id:
+      - hPdPN9feGAWFh_MrW2ANFudbRlmN0uCU84ni4O18eB3IfHA8ESXTKg==
+    body:
+      encoding: UTF-8
+      string: '[{"name": "Paris", "latitude": 48.8588897, "longitude": 2.3200410217200766,
+        "country": "FR", "state": "Ile-de-France"}, {"name": "Paris", "latitude":
+        48.8534951, "longitude": 2.3483915, "country": "FR", "state": "Ile-de-France"},
+        {"name": "Paris", "latitude": 48.8588897, "longitude": 2.3200410217200766,
+        "country": "FR", "state": "Ile-de-France"}, {"name": "Parisot", "latitude":
+        44.6370913, "longitude": 0.77482, "country": "FR", "state": "Nouvelle-Aquitaine"},
+        {"name": "Paris", "latitude": 44.5626798, "longitude": -0.865783, "country":
+        "FR", "state": "Nouvelle-Aquitaine"}]'
+  recorded_at: Wed, 15 Feb 2023 17:27:09 GMT
+recorded_with: VCR 6.1.0

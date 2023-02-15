@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe GeoapifyService do # , :vcr do
+describe GeoapifyService, :vcr do
   it '.get_city_places' do
     city_info = { name: 'Paris', latitude: 48.8588897, longitude: 2.3200410217200766, country: 'FR',
                   state: 'Ile-de-France' }

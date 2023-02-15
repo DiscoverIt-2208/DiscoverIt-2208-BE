@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe GeocodingService do # , :vcr do
+RSpec.describe GeocodingService, :vcr do
   it '.capital_info' do
     city_name = 'Paris'
     country = 'France'
