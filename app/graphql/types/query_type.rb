@@ -12,5 +12,6 @@ module Types
     end
 
     field :places, resolver: Queries::FetchPlaces
+    field :place_details, resolver: Queries::FetchPlaceDetails
   end
 end

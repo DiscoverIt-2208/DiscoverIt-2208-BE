@@ -7,8 +7,12 @@ module Types
     field :categories, [String]
     field :place_id, String
     field :city, String
+    field :state, String, null: true
     field :country, String
-    field :lat, Float
-    field :lon, Float
+    field :lat, Float, null: true
+    field :lon, Float, null: true
+    field :phone, String, null: true
+    field :hours, String, null: true
+    field :website, String, null: true
   end
 end
