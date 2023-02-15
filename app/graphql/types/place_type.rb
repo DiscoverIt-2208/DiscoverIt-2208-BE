@@ -14,5 +14,6 @@ module Types
     field :phone, String, null: true
     field :hours, String, null: true
     field :website, String, null: true
+    field :image_data, String
   end
 end

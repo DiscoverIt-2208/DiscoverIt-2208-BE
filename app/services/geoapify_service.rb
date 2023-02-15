@@ -29,7 +29,7 @@ class GeoapifyService
     categories ||= DEFAULT_CATEGORIES
 
     response = conn.get("/v2/places") do |f|
-      f.params['categories'] = categories.join(', ')
+      f.params['categories'] = categories.join(',')
       f.params['bias'] = "proximity:#{city_info[:longitude]},#{city_info[:latitude]}"
       f.params['filter'] = "circle:#{city_info[:longitude]},#{city_info[:latitude]},#{radius}"
       f.params['offset'] = offset
