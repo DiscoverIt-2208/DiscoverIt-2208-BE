@@ -9,6 +9,8 @@ here will live the general description of our application.
 <br>
 :earth_americas: [Endpoints](#endpoints)
 <br>
+:earth_americas: [DB Schema](#db-schema)
+<br>
 :earth_americas: [Learning Goals](#learning-goals)
 <br>
 :earth_americas: [Contributors](#contributors)
@@ -54,6 +56,10 @@ here will live the general description of our application.
         imageData: {name: String, photo_reference: String} or {error_message: String}
       }
       ```
+      
+### DB Schema
+![image](https://user-images.githubusercontent.com/105073232/217670746-aa1f1e46-625a-480d-a246-a539dbb20624.png)
+<br> 
 
 ### Learning Goals
 - Above 80% test coverage
