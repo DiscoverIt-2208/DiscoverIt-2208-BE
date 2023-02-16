@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2023_02_14_031431) do
     t.bigint "user_id"
     t.string "place_id"
     t.string "place_name"
-    t.string "thumbnail_url"
+    t.string "thumbnail_url", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city"
