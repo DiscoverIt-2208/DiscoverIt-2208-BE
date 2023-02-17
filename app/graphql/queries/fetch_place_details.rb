@@ -14,7 +14,7 @@ module Queries
 
       def resolve(args)
         details = PlacesFacade.get_detailed_information(args[:place_id])
-        image = ImageFacade.get_place_image_ref(details[:formatted])
+        image = ImageFacade.get_place_image_url(details[:formatted])
         {"place_id" => args[:place_id],
          "name" => details[:name],
          "city" => details[:city],
