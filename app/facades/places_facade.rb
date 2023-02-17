@@ -38,7 +38,7 @@ class PlacesFacade
   # Flattens geoapify responses specifically
   def self.geoapify_flattener(raw_hits)
     raw_hits.map do |raw_hit|
-      raw_hit[:properties][:image_data] = ImageFacade.get_place_image_ref(raw_hit[:properties][:formatted])
+      raw_hit[:properties][:image_data] = ImageFacade.get_place_image_url(raw_hit[:properties][:formatted])
       raw_hit[:properties]
     end
   end

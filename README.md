@@ -1,14 +1,15 @@
 <div align="center"> 
 
-![Asset 4](https://user-images.githubusercontent.com/105073232/217386688-758d8d96-71ec-46cf-84ea-9de425b0dff0.png)  
+![Asset 4](https://user-images.githubusercontent.com/108088961/219438381-d265b1e5-ad93-4eda-9d5e-54bc35fa5d6a.png)  
 </div>
 
 here will live the general description of our application. 
 
-
 :earth_americas: [Homepage](#homepage)
 <br>
 :earth_americas: [Endpoints](#endpoints)
+<br>
+:earth_americas: [DB Schema](#db-schema)
 <br>
 :earth_americas: [Learning Goals](#learning-goals)
 <br>
@@ -55,6 +56,10 @@ here will live the general description of our application.
         imageData: {name: String, photo_reference: String} or {error_message: String}
       }
       ```
+      
+### DB Schema
+![image](https://user-images.githubusercontent.com/105073232/217670746-aa1f1e46-625a-480d-a246-a539dbb20624.png)
+<br> 
 
 ### Learning Goals
 - Above 80% test coverage

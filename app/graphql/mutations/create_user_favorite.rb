@@ -29,8 +29,7 @@ module Mutations
               error: "#{args[:place_name]} is already in favorites!"
             } 
       else
-        Favorite.create(
-            user_id: args[:user_id],
+        User.find(args[:user_id]).favorites.create(
             place_id: args[:place_id],
             place_name: args[:place_name],
             thumbnail_url: args[:thumbnail_url],
