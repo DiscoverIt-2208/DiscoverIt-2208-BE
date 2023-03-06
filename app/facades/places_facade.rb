@@ -6,6 +6,7 @@ class PlacesFacade
     google_api_fields: %i[name formatted categories place_id lon lat image_data]
   }.freeze
 
+  # Temporary fix, needs to be refactored to not use caching. Instead should use cookies or sessions
   def self.places(city_info, categories = nil, page = 0, search_radius = 2500)
     if categories.nil?
       pagetokens = []
