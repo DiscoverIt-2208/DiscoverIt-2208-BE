@@ -40,63 +40,15 @@ RSpec.describe PlacesFacade, :vcr do
   # end
 
   context 'google methods' do
-    describe '.get_places w/o categories (landing page)' do
-      it 'returns places from location in proper format' do
-        places = PlacesFacade.places(city_info)
+    describe ' - happy path - ' do
+      describe '.places w/o categories (landing page)' do
+        it 'returns places from location in proper format' do
+          places = PlacesFacade.places(city_info)
 
-        expect(places).to be_an Array
-
-        hit = places[0]
-
-        expect(hit).to be_a(Hash)
-        expect(hit.keys).to include(:name, :lon, :lat, :formatted, :categories, :place_id, :image_data, :next_page_token)
-        expect(hit[:name]).to be_a(String)
-        expect(hit[:formatted]).to be_a(String)
-        expect(hit[:categories]).to be_a(Array)
-        expect(hit[:categories][0]).to be_a(String)
-        expect(hit[:place_id]).to be_a(String)
-        expect(hit[:image_data]).to be_a Hash
-        expect(hit[:image_data].keys).to eq(%i[name photo_reference])
-        expect(hit[:next_page_token]).to be_a String
-        expect(hit[:image_data][:name]).to be_a(String)
-        expect(hit[:image_data][:photo_reference]).to be_a(String)
-        expect(hit[:lat]).to be_a(Float)
-        expect(hit[:lon]).to be_a(Float)
-      end
-
-      it 'can paginate and still returns places from location in proper format' do
-        places_pg1 = PlacesFacade.places(city_info)
-        places_pg2 = PlacesFacade.places(city_info, page_token: places_pg1.first[:next_page_token])
-
-        expect(places_pg2).to be_an Array
-
-        first_page_hit = places_pg1[0]
-        hit = places_pg2[0]
-
-        expect(hit).to_not eq(first_page_hit)
-
-        expect(hit).to be_a(Hash)
-        expect(hit.keys).to include(:name, :lon, :lat, :formatted, :categories, :place_id, :image_data, :next_page_token)
-        expect(hit[:name]).to be_a(String)
-        expect(hit[:formatted]).to be_a(String)
-        expect(hit[:categories]).to be_a(Array)
-        expect(hit[:categories][0]).to be_a(String)
-        expect(hit[:place_id]).to be_a(String)
-        expect(hit[:image_data]).to be_a Hash
-        expect(hit[:image_data].keys).to eq(%i[name photo_reference])
-        expect(hit[:image_data][:name]).to be_a(String)
-        expect(hit[:image_data][:photo_reference]).to be_a(String)
-        expect(hit[:lat]).to be_a(Float)
-        expect(hit[:lon]).to be_a(Float)
-      end
-
-      describe '.get_places w/ categories' do
-        it 'returns new places that match the categories' do
-          places = PlacesFacade.places(city_info, categories: ['restaurants'])
           expect(places).to be_an Array
-  
+
           hit = places[0]
-  
+
           expect(hit).to be_a(Hash)
           expect(hit.keys).to include(:name, :lon, :lat, :formatted, :categories, :place_id, :image_data, :next_page_token)
           expect(hit[:name]).to be_a(String)
@@ -111,6 +63,73 @@ RSpec.describe PlacesFacade, :vcr do
           expect(hit[:image_data][:photo_reference]).to be_a(String)
           expect(hit[:lat]).to be_a(Float)
           expect(hit[:lon]).to be_a(Float)
+        end
+
+        it 'can paginate and still returns places from location in proper format' do
+          places_pg1 = PlacesFacade.places(city_info)
+          places_pg2 = PlacesFacade.places(city_info, page_token: places_pg1.first[:next_page_token])
+
+          expect(places_pg2).to be_an Array
+
+          first_page_hit = places_pg1[0]
+          hit = places_pg2[0]
+
+          expect(hit).to_not eq(first_page_hit)
+
+          expect(hit).to be_a(Hash)
+          expect(hit.keys).to include(:name, :lon, :lat, :formatted, :categories, :place_id, :image_data, :next_page_token)
+          expect(hit[:name]).to be_a(String)
+          expect(hit[:formatted]).to be_a(String)
+          expect(hit[:categories]).to be_a(Array)
+          expect(hit[:categories][0]).to be_a(String)
+          expect(hit[:place_id]).to be_a(String)
+          expect(hit[:image_data]).to be_a Hash
+          expect(hit[:image_data].keys).to eq(%i[name photo_reference])
+          expect(hit[:image_data][:name]).to be_a(String)
+          expect(hit[:image_data][:photo_reference]).to be_a(String)
+          expect(hit[:lat]).to be_a(Float)
+          expect(hit[:lon]).to be_a(Float)
+        end
+      end
+
+      describe 'places w/ categories' do
+        it 'returns new places that match the categories' do
+          places = PlacesFacade.places(city_info, categories: ['restaurants'])
+          expect(places).to be_an Array
+
+          hit = places[0]
+
+          expect(hit).to be_a(Hash)
+          expect(hit.keys).to include(:name, :lon, :lat, :formatted, :categories, :place_id, :image_data, :next_page_token)
+          expect(hit[:name]).to be_a(String)
+          expect(hit[:formatted]).to be_a(String)
+          expect(hit[:categories]).to be_a(Array)
+          expect(hit[:categories][0]).to be_a(String)
+          expect(hit[:place_id]).to be_a(String)
+          expect(hit[:image_data]).to be_a Hash
+          expect(hit[:image_data].keys).to eq(%i[name photo_reference])
+          expect(hit[:next_page_token]).to be_a String
+          expect(hit[:image_data][:name]).to be_a(String)
+          expect(hit[:image_data][:photo_reference]).to be_a(String)
+          expect(hit[:lat]).to be_a(Float)
+          expect(hit[:lon]).to be_a(Float)
+        end
+      end
+    end
+
+    describe ' - sad path - ' do
+      describe 'can still correctly .places with shared international names' do
+        it 'returns places from location in proper format' do
+          city_info = GeocodingFacade.city_info("Paris", "USA")
+          places = PlacesFacade.places(city_info)
+
+          expect(places).to be_an Array
+
+          hit = places[0]
+
+          expect(hit).to be_a(Hash)
+          expect(hit.keys).to include(:name, :lon, :lat, :formatted, :categories, :place_id, :image_data, :next_page_token)
+          expect(hit[:name].include?("TX"))
         end
       end
     end
