@@ -6,6 +6,7 @@ class PlacesFacade
     google_api_fields: %i[name formatted categories place_id lon lat image_data next_page_token]
   }.freeze
 
+
   def self.places(city_info, categories: nil, page_token: nil, search_type: "google", search_radius: 2500)
     if search_type == "geoapify"
       geoapify_get_places(city_info, categories, search_radius)
