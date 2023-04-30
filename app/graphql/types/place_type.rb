@@ -15,5 +15,6 @@ module Types
     field :hours, String, null: true
     field :website, String, null: true
     field :image_data, String, null: true
+    field :next_page_token, String, null: true
   end
 end

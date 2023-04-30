@@ -10,9 +10,9 @@ class GoogleService
 
   def self.get_city_places(city_info, categories, page_token)
     query_string = if categories
-                     "best #{categories.join(' ')} in #{city_info[:name]}"
+                     "best #{categories.join(' ')} in #{city_info[:name]}, #{city_info[:country]}"
                    else
-                     "best things to do in #{city_info[:name]}"
+                     "best things to do in #{city_info[:name]}, #{city_info[:country]}"
                    end
     response = conn.get('place/textsearch/json') do |f|
       f.params['query'] = query_string
