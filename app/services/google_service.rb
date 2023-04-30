@@ -1,6 +1,6 @@
 class GoogleService
   def self.find_place(address, fields = '')
-    response = conn.get("place/findplacefromtext/json") do |f|
+    response = conn.get('place/findplacefromtext/json') do |f|
       f.params['fields'] = fields
       f.params['inputtype'] = 'textquery'
       f.params['input'] = address
@@ -8,9 +8,14 @@ class GoogleService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.get_city_places(city_info, page_token)
-    response = conn.get("place/textsearch/json") do |f|
-      f.params['query'] = "things to do in #{city_info[:name]}"
+  def self.get_city_places(city_info, categories, page_token)
+    query_string = if categories
+                     "best #{categories.join(' ')} in #{city_info[:name]}"
+                   else
+                     "best things to do in #{city_info[:name]}"
+                   end
+    response = conn.get('place/textsearch/json') do |f|
+      f.params['query'] = query_string
       f.params['language'] = 'en'
       f.params['location'] = "#{city_info[:latitude]},#{city_info[:longitude]}"
       (f.params['pagetoken'] = page_token) if page_token.present?
