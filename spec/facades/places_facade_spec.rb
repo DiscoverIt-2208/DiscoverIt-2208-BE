@@ -70,7 +70,9 @@ RSpec.describe PlacesFacade, :vcr do
           places_pg2 = PlacesFacade.places(city_info, page_token: places_pg1.first[:next_page_token])
 
           expect(places_pg2).to be_an Array
-
+          puts places_pg1
+          puts places_pg2
+          
           first_page_hit = places_pg1[0]
           hit = places_pg2[0]
 
