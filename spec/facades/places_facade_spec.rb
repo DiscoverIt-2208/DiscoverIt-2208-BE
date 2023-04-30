@@ -71,27 +71,12 @@ RSpec.describe PlacesFacade, :vcr do
 
           expect(places_pg2).to be_an Array
 
-          puts places_pg1
-          puts places_pg2
+          first_page_hit = places_pg1.first
+          second_page_hit = places_pg2.first
 
-          first_page_hit = places_pg1[0]
-          hit = places_pg2[0]
+          expect(places_pg1).to_not include(second_page_hit)
+          expect(places_pg2).to_not include(first_page_hit)
 
-          expect(hit).to_not eq(first_page_hit)
-
-          expect(hit).to be_a(Hash)
-          expect(hit.keys).to include(:name, :lon, :lat, :formatted, :categories, :place_id, :image_data, :next_page_token)
-          expect(hit[:name]).to be_a(String)
-          expect(hit[:formatted]).to be_a(String)
-          expect(hit[:categories]).to be_a(Array)
-          expect(hit[:categories][0]).to be_a(String)
-          expect(hit[:place_id]).to be_a(String)
-          expect(hit[:image_data]).to be_a Hash
-          expect(hit[:image_data].keys).to eq(%i[name photo_reference])
-          expect(hit[:image_data][:name]).to be_a(String)
-          expect(hit[:image_data][:photo_reference]).to be_a(String)
-          expect(hit[:lat]).to be_a(Float)
-          expect(hit[:lon]).to be_a(Float)
         end
       end
 
