@@ -13,7 +13,7 @@ module Queries
       city_info = GeocodingFacade.city_info(args.delete(:city), args.delete(:country))
       places = PlacesFacade.places(city_info, **args)
 
-      hits = places.each_with_object([]) do |place, array|
+      places.each_with_object([]) do |place, array|
         array << {
           'name' => place[:name].presence || place[:formatted],
           'address' => place[:formatted],
